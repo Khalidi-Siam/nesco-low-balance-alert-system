@@ -1,0 +1,29 @@
+name: NESCO Low Balance Alert
+
+on:
+  schedule:
+    - cron: "0 10 * * *"   # 9 AM Bangladesh (UTC+6)
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run NESCO balance checker
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          CONSUMER_IDS: ${{ secrets.CONSUMER_IDS }}
+        run: python nesco.py
