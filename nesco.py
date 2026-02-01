@@ -7,7 +7,7 @@ import requests
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
 CUSTOMER_IDS = [cid.strip() for cid in os.environ["CONSUMER_IDS"].split(",") if cid.strip()]
-LOW_BALANCE_THRESHOLD = 200
+LOW_BALANCE_THRESHOLD = 100
 BASE_URL = "https://customer.nesco.gov.bd/pre/panel"
 
 async def get_balance(customer_id):

@@ -2,7 +2,7 @@ name: NESCO Low Balance Alert
 
 on:
   schedule:
-    - cron: "0 10 * * *"   # 9 AM Bangladesh (UTC+6)
+    - cron: "0 10 * * 2,6"   # 4 PM Bangladesh (UTC+6)
   workflow_dispatch:
 
 jobs:
