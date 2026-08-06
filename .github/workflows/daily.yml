@@ -21,11 +21,13 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          playwright install
+          # playwright install
 
       - name: Run NESCO balance checker
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
-          CONSUMER_IDS: ${{ secrets.CONSUMER_IDS }}
+          ID1: ${{ secrets.ID1 }}
+          ID2: ${{ secrets.ID2 }}
+          ZENROWS_API_KEY: ${{ secrets.ZENROWS_API_KEY }}
         run: python nesco.py
