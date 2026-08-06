@@ -2,15 +2,21 @@
 
 A Python script that automatically checks prepaid electricity balance from [NESCO (Northern Electricity Supply Company)](https://customer.nesco.gov.bd/pre/panel) and sends Telegram alerts when the balance is low. Runs automatically via GitHub Actions on a schedule.
 
+## 💡 Why I Built This
+
+With a prepaid electricity meter, there's a frustrating problem — **if I'm away from home and the balance runs out, the electricity goes off**. Checking the remaining balance regularly is tedious, and I often forget to do it until it's too late.
+
+To solve this, I built this system so that **when the balance drops below a threshold, it automatically sends me a notification via a Telegram bot**. This way, I get an early warning and never forget to recharge — no matter where I am.
+
 ## Features
 
-- 🔍 Fetches prepaid meter balance using Playwright browser automation
-- 🌍 Bypasses geo-restriction via [Zenrows](https://zenrows.com/) browser proxy (NESCO portal is only accessible from Bangladesh)
-- 📱 Sends Telegram notifications for low balance alerts
-- 👥 Supports multiple customer IDs (`ID1`, `ID2`)
-- ⚡ Configurable low balance threshold (default: 100 TK)
-- 🕐 **Scheduled Runs** via GitHub Actions
-- 🔧 Manual trigger support via `workflow_dispatch`
+- Fetches prepaid meter balance using Playwright browser automation
+- Bypasses geo-restriction via [Zenrows](https://zenrows.com/) browser proxy (NESCO portal is only accessible from Bangladesh)
+- Sends Telegram notifications for low balance alerts
+- Supports multiple customer IDs (`ID1`, `ID2`)
+- Configurable low balance threshold (default: 100 TK)
+- **Scheduled Runs** via GitHub Actions
+- Manual trigger support via `workflow_dispatch`
 
 ## How It Works
 
