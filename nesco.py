@@ -49,6 +49,7 @@ async def main():
     alerts = []
     for cid in CUSTOMER_IDS:
         balance = await get_balance(cid)
+        print(balance)
         if balance is None:
             alerts.append(f"🆔 `{cid}`\n⚠️ Could not fetch balance\n")
         elif balance < LOW_BALANCE_THRESHOLD:
